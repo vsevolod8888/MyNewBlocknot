@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/apppbar"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:theme="@style/ThemeOverlay.AppCompat">
+
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/ThemeOverlay.AppCompat" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/notes_list"
+        android:layout_below="@+id/apppbar"
+        android:paddingTop="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints"/>
+
+    <ImageView
+        android:id="@+id/empty_notes_view"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:visibility="visible"
+
+        app:layout_anchor="@+id/notes_list"
+        app:layout_anchorGravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/notes_list"
+        app:layout_constraintEnd_toEndOf="@+id/notes_list"
+        app:layout_constraintStart_toStartOf="@+id/notes_list"
+        app:layout_constraintTop_toTopOf="@+id/notes_list"
+        app:srcCompat="@drawable/manowar"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        app:srcCompat="@android:drawable/ic_dialog_email"
+        />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
